@@ -1,7 +1,8 @@
 import React from "react";
 import Typist from "react-typist";
 import Lottie from "react-lottie";
-import animationHeartbeat from '../assets/animations/heartbeat.json';
+import animationHeartbeat from "../../assets/animations/heartbeat.json";
+import "./intro.scss";
 interface IProps {
   onFinish?: Function;
 }
@@ -14,7 +15,7 @@ class Intro extends React.Component<IProps, IState> {
     super(props);
     this.state = {
       showHeart: false,
-      showHelp: false
+      showHelp: false,
     };
     this._setup();
   }
@@ -23,9 +24,8 @@ class Intro extends React.Component<IProps, IState> {
     this._finishIntro = this._finishIntro.bind(this);
   }
   private _finishAnimationTyping(): void {
-    console.log("finish");
     this.setState({ showHeart: true });
-    setTimeout(() => this.setState({showHelp: true}), 500);
+    setTimeout(() => this.setState({ showHelp: true }), 500);
   }
   private _finishIntro(): void {
     this.props.onFinish && this.props.onFinish();
@@ -42,33 +42,33 @@ class Intro extends React.Component<IProps, IState> {
     return (
       <div onClick={this._finishIntro}>
         <Lottie
-        
-        isClickToPauseDisabled={true}
-        options={defaultOptions}
-        isStopped={false}
-        isPaused={false}
-        height={200}
-        width={200}
-      />
+          isClickToPauseDisabled={true}
+          options={defaultOptions}
+          isStopped={false}
+          isPaused={false}
+          height={200}
+          width={200}
+        />
       </div>
-
     );
   }
-  private _getHelp (): JSX.Element {
+  private _getHelp(): JSX.Element {
     return (
-      <Typist>
-        Presionar el corazoncito
-      </Typist>
+      <Typist cursor={{ hideWhenDone: true }}>Presionar el corazoncito</Typist>
     );
   }
   render() {
-    const {showHeart, showHelp} = this.state;
-    const animation = showHeart?this._getAnimation(): null;
-    const help = showHelp? this._getHelp(): null;
+    const { showHeart, showHelp } = this.state;
+    const animation = showHeart ? this._getAnimation() : null;
+    const help = showHelp ? this._getHelp() : null;
     return (
-      <div>
-        <Typist onTypingDone={this._finishAnimationTyping}>
-          Hola Amorcito. <br />
+      <div className="app-intro app">
+        <Typist
+          onTypingDone={this._finishAnimationTyping}
+          cursor={{ hideWhenDone: true }}
+        >
+          <h1>Hola Amorcito.</h1>
+          <br />
           Espero te guste esta cartita
         </Typist>
         {animation}

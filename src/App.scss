@@ -1,0 +1,21 @@
+html, body {
+  font-family: 'Pacifico', cursive;
+  font-size: 18px;
+  background: #f8f0ee;
+  color: #e5386d;
+  scroll-behavior: smooth;
+}
+.app {
+  padding-top: 30px;
+  padding-bottom: 25%;
+}
+.btn {
+  margin: 0 15px;
+  &.btn-dark {
+    background: #2748a0;
+    border-color: #2748a0;
+  }
+}
+input {
+  color: #e5386d;
+}
