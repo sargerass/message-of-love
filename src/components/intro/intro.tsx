@@ -67,7 +67,7 @@ class Intro extends React.Component<IProps, IState> {
           onTypingDone={this._finishAnimationTyping}
           cursor={{ hideWhenDone: true }}
         >
-          <h1>Hola Amorcito.</h1>
+          <h1>Hola Amorcito</h1>
           <br />
           Espero te guste esta cartita
         </Typist>
