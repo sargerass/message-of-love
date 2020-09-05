@@ -82,7 +82,7 @@ class MessageInitial extends React.Component<IProps, IState> {
           cursor={{ hideWhenDone: true }}
         >
           Amorcito hace mucho tiempo no te escribo ni te hago una carta como te
-          gusta. Hoy te escribo con palabras y código. Sabes que no me gusta
+          gusta. Hoy te escribo con palabras y código, porque sabes que no me gusta
           usar papel para no romper arbolitos. Además, con esta acción apoyamos
           con más comidita para los veganos XD. Quería empezar diciendo que en
           esta cuarentena hemos solidificado mucho más la relación, ya que hemos
