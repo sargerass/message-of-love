@@ -4,6 +4,7 @@ import Intro from "./components/intro/intro";
 import MessageInitial from "./components/message-initial/message-initial";
 import Quest from "./components/quest/quest";
 import MessageFinish from "./components/message-finish/message-finish";
+import { goEndPage } from "./core/helpers";
 interface IProps {}
 interface IState {
   showMessageInitial: boolean;
@@ -21,9 +22,7 @@ class App extends React.Component<IProps, IState> {
     this._setup();
   }
   componentDidUpdate() {
-    setTimeout(() => {
-      window.scrollTo(0,document.body.scrollHeight);
-    }, 800);
+    goEndPage();
   }
   private _setup(): void {
     this._finishIntro = this._finishIntro.bind(this);

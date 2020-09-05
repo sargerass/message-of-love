@@ -4,6 +4,7 @@ import Lottie from "react-lottie";
 import animationHungry from "../../assets/animations/hungry.json";
 import imageQuest from '../../assets/images/problema.jpg';
 import './quest.scss';
+import { goEndPage } from "../../core/helpers";
 interface IProps {
   onFinish?: Function;
 }
@@ -60,9 +61,7 @@ class Quest extends React.Component<IProps, IState> {
     );
   }
   componentDidUpdate() {
-    setTimeout(() => {
-      window.scrollTo(0,document.body.scrollHeight);
-    }, 800);
+    goEndPage();
   }
   private _setup(): void {
     this._onChangeAnswer = this._onChangeAnswer.bind(this);
@@ -104,7 +103,7 @@ class Quest extends React.Component<IProps, IState> {
     return (
       <div className="app app-quest">
         <h2>
-          La pregunta es..........
+          La pregunta es ..........
         </h2>
         <img className="app-quest__image" src={imageQuest}/>
         <Typist
@@ -126,7 +125,7 @@ class Quest extends React.Component<IProps, IState> {
             <Typist.Backspace delay={200} />
             <small>
               PD: Cada vez que escribas una repuesta me enterare, ya que todo lo
-              guardo en mi base de datos muhaahaha.
+              guardo en mi base de datos muhaahaha...
             </small>
           </div>
         </Typist>

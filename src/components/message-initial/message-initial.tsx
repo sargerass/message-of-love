@@ -2,6 +2,7 @@ import React from "react";
 import Typist from "react-typist";
 import animationSad from "../../assets/animations/sad.json";
 import Lottie from "react-lottie";
+import { goEndPage } from "../../core/helpers";
 interface IProps {
   onFinish?: Function;
 }
@@ -19,9 +20,7 @@ class MessageInitial extends React.Component<IProps, IState> {
     this._setup();
   }
   componentDidUpdate() {
-    setTimeout(() => {
-      window.scrollTo(0, document.body.scrollHeight);
-    }, 800);
+    goEndPage();
   }
   private _setup(): void {
     this._finishAnimationTyping = this._finishAnimationTyping.bind(this);
@@ -94,7 +93,7 @@ class MessageInitial extends React.Component<IProps, IState> {
           muchas cosas básicas del día a día.
           <br />
           <br />
-          ¿Quisieras que te siga contando?
+          ¿Quisieras resolver un miniproblemita y seguir con mi carta?
         </Typist>
         <br />
         {options}
