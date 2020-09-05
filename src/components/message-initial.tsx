@@ -28,6 +28,7 @@ class MessageInitial extends React.Component<IProps, IState> {
     this.setState({ showOptions: true });
   }
   private _accepted(): void {
+    this.setState({showNoAcepted: false});
     this.props.onFinish && this.props.onFinish();
   }
   private _noAccepted(): void {
@@ -54,14 +55,13 @@ class MessageInitial extends React.Component<IProps, IState> {
         width={200}
       />
       </div>
-
     );
   }
   private _getOptions(): JSX.Element {
     return (
       <div>
-        <button onClick={this._accepted}>Si</button>
-        <button onClick={this._noAccepted}>No</button>
+        <button className="btn btn-dark" onClick={this._accepted}>Si</button>
+        <button className="btn btn-light" onClick={this._noAccepted}>No</button>
       </div>
     );
   }
@@ -78,6 +78,7 @@ class MessageInitial extends React.Component<IProps, IState> {
           ¿Quisieras que te siga contando?
         </Typist>
         {options}
+        {noAccepted}
       </div>
     );
   }
